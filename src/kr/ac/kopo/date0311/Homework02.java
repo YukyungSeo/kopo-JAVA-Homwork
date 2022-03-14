@@ -13,9 +13,10 @@ public class Homework02 {
 		System.out.print("2 - 10 사이의 정수를 입력 : ");
 		int num2 = sc.nextInt();
 
-		for (int i = 1; i <= num1; i++) {
-			if (i % num2 != 0)
-				System.out.print(i + " ");
+		System.out.printf("\n<1 ~ %d 사이의 %d의 배수를 제외한 정수 출력>\n", num1, num2);
+		for (int cnt = 1; cnt <= num1; cnt++) {
+			if (cnt % num2 != 0)
+				System.out.print(cnt + " ");
 		}
 		System.out.println();
 

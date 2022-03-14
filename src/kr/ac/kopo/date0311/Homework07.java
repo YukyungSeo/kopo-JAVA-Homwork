@@ -4,6 +4,7 @@ public class Homework07 {
 
 	public static void main(String[] args) {
 
+		// 방법 1
 		for (int dan = 2; dan <= 9; dan += 3) {
 			for (int value = 1; value < 10; value++) {
 				for (int i = 0; i < 3; i++) {
@@ -13,7 +14,6 @@ public class Homework07 {
 				System.out.println();
 			}
 			System.out.println();
-
 		}
 
 		// 방법 2

@@ -111,5 +111,6 @@ public class Homework08 {
 			System.out.println();
 			start += i < 4 ? 1 : -1;
 		}
+		System.out.println();
 	}
 }

@@ -84,23 +84,36 @@ public class Operator2 {
 		int num2 = SC.nextInt();
 		System.out.print("세번째 정수 : ");
 		int num3 = SC.nextInt();
-		
-		if(num1>num2 && num1>num3) {
-			if(num2 > num3)
+
+		if (num1 > num2 && num1 > num3) {
+			if (num2 > num3)
 				System.out.printf("%d %d %d\n", num1, num2, num3);
 			else
 				System.out.printf("%d %d %d\n", num1, num3, num2);
-		} else if(num2>num1 && num2>num3) {
-			if(num1 > num3)
+		} else if (num2 > num1 && num2 > num3) {
+			if (num1 > num3)
 				System.out.printf("%d %d %d\n", num2, num1, num3);
 			else
 				System.out.printf("%d %d %d\n", num2, num3, num1);
 		} else {
-			if(num1 > num2)
+			if (num1 > num2)
 				System.out.printf("%d %d %d\n", num3, num1, num2);
 			else
 				System.out.printf("%d %d %d\n", num3, num2, num1);
 		}
+		
+		
+		/* 교수님 방식 */
+		int max = num1 > num2 ? num1 : num2;
+		int min = num1 < num2 ? num1 : num2;
+		
+		if(num3 > max)
+			System.out.printf("%d %d %d\n", num3, max, min);
+		else if(num3 > min)
+			System.out.printf("%d %d %d\n", max, num3, min);
+		else
+			System.out.printf("%d %d %d\n", max, min, num3);
+
 	}
 
 	public static void eleven() {
