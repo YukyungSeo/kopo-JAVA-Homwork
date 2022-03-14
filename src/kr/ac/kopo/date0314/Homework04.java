@@ -44,11 +44,11 @@ public class Homework04 {
 		for (int i = 0; i < arr.length; i++) {
 
 			int num = arr[arr.length - 1 - i];
-			do {
+			while (num != 0) {
 				reverse[i] *= 10;
 				reverse[i] += (num % 10);
 				num /= 10;
-			} while (num != 0);
+			}
 
 		}
 
