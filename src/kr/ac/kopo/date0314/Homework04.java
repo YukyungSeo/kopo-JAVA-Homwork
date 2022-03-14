@@ -40,34 +40,23 @@ public class Homework04 {
 
 		/* REVERSE */
 		// reverse 계산
-		String[] reverse = new String[5];
+		int[] reverse = new int[5];
 		for (int i = 0; i < arr.length; i++) {
 
 			int num = arr[arr.length - 1 - i];
-//			String rvsNum = "";
-//			for (int j = 0; num >= 10; j++) {
-//				int check = num % 10;
-//				if (!rvsNum.equals("") && check != 0)
-//					rvsNum += check;
-//				num /= 10;
-//			}
-			
-			String rvsNum = "";
-			for (int j = 0; num >= 10; j++) {
-				int check = num % 10;
-				if (!rvsNum.equals("") && check != 0)
-					rvsNum += check;
+			do {
+				reverse[i] *= 10;
+				reverse[i] += (num % 10);
 				num /= 10;
-			}
+			} while (num != 0);
 
-			reverse[i] = rvsNum + num;
 		}
 
 		// 결과 출력
 //		System.out.println(Arrays.toString(reverse));
 		System.out.println("< REVERSE >");
-		for (String string : reverse) {
-			System.out.print(string + " ");
+		for (int i : reverse) {
+			System.out.print(i + " ");
 		}
 
 		sc.close();
