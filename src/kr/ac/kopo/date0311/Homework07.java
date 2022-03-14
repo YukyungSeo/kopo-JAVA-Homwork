@@ -15,16 +15,17 @@ public class Homework07 {
 			System.out.println();
 
 		}
-		
-		// 최적화 시도 중..
-		for (int dan = 2; dan <= 9; dan += 3) {
-			for (int i = 1; i < 30; i++) {
-				int value = i%3 + 1;
-				if (dan + i < 10)
-					System.out.printf("%d * %d = %2d\t", dan + i, value, ((dan + i) * value));
+
+		// 방법 2
+		for (int row = 0; row < 27; row++) {
+			for (int col = 0; col < 3; col++) {
+				int dan = (col + 2) + (row / 9 * 3); // 2+0, 2+3 2+6
+				int value = row % 9 + 1;
+				int result = dan * value;
+				if (dan < 10)
+					System.out.printf("%d * %d = %2d\t", dan, value, result);
 			}
 			System.out.println();
-
 		}
 	}
 }

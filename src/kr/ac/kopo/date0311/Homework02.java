@@ -17,7 +17,19 @@ public class Homework02 {
 			if (i % num2 != 0)
 				System.out.print(i + " ");
 		}
-		
+		System.out.println();
+
+		System.out.printf("\n<1 ~ %d 사이의 %d의 배수를 제외한 정수 5개씩 출력>\n", num1, num2);
+		int enterCnt = 0;
+		for (int cnt = 1; cnt <= num1; cnt++) {
+			if (cnt % num2 != 0) {
+				System.out.printf("%2d ", cnt);
+				enterCnt++;
+				if (enterCnt % 5 == 0)
+					System.out.println();
+			}
+		}
+
 		sc.close();
 	}
 }
