@@ -66,9 +66,9 @@ public class Homework08 {
 			}
 		}
 		System.out.println();
-		
-		// 반복문 2개, 조건문 2개
-		System.out.println("반복문 2개, 조건문 2개");
+
+		// 반복문 2개, 조건문 3개
+		System.out.println("반복문 2개, 조건문 3개");
 		for (int i = 0; i < 9; i++) {
 			for (int j = 0; j < 5; j++) {
 				if (i < 5) {
@@ -87,17 +87,29 @@ public class Homework08 {
 		}
 		System.out.println();
 
-		// 반복문 2개, 조건문 1개
-		System.out.println("반복문 2개, 조건문 1개");
+		// 반복문 2개, 조건문 3개
+		System.out.println("반복문 2개, 조건문 3개");
 		for (int i = 0; i < 9; i++) {
 			for (int j = 0; j < 5; j++) {
 				if (i < 5)
 					System.out.print(j < i ? "-" : "*");
 				else
-					System.out.print(j < 8-i ? "-" : "*");
+					System.out.print(j < 8 - i ? "-" : "*");
 			}
 			System.out.println();
 		}
 		System.out.println();
+
+		// 반복문 2개, 조건문 2개
+		System.out.println("반복문 2개, 조건문 2개");
+		int start = 0;
+		for (int i = 0; i < 9; i++) {
+
+			for (int j = 0; j < 5; j++) {
+				System.out.print(j < start ? '-' : '*');
+			}
+			System.out.println();
+			start += i < 4 ? 1 : -1;
+		}
 	}
 }
