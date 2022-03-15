@@ -29,9 +29,12 @@ public class IcecreamMain {
 		// 출력
 		System.out.printf("< 총 %d개의 아이스크림 구매정보 출력 >\n", num);
 		System.out.println("번호\t아이스크림명\t가격");
+		int sum = 0;
 		for (int i = 0; i < icecreams.length; i++) {
 			System.out.printf("%d\t%s\t\t%d\n", i + 1, icecreams[i].name, icecreams[i].price);
+			sum += icecreams[i].price;
 		}
+		System.out.println("총 판매액 : " + sum + "원");
 
 		sc.close();
 	}
