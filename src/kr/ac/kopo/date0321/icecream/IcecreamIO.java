@@ -1,18 +1,23 @@
-package kr.ac.kopo.date0321;
+package kr.ac.kopo.date0321.icecream;
 
 import java.util.Scanner;
 
 class IcecreamIO {
 
-	static Scanner sc = new Scanner(System.in);
+	private static Scanner sc = new Scanner(System.in);
+
+	public static void printOpenMarket() {
+		System.out.println(">>> 마켓이 개장하습니다");
+	}
 
 	public static char getAnAnswerToContinue() {
-		System.out.print("계속 주문하시겠습니가(yes:Y/y, no:N/n)? => ");
+		System.out.print("계속 주문하시겠습니까? (yes:Y/y, no:N/n) => ");
 		return sc.nextLine().charAt(0);
 	}
 
 	public static int getIcecreamCount() {
-		System.out.print("아이스크림 몇개 구입할꺼야? => ");
+		System.out.println();
+		System.out.print("아이스크림을 몇개 구입하시겠습니까? => ");
 		return Integer.parseInt(sc.nextLine());
 	}
 
@@ -39,7 +44,16 @@ class IcecreamIO {
 		System.out.println(num + "\t" + name + "\t\t" + price);
 	}
 
+	public static void printNumberOfIcecream(int cnt) {
+		System.out.println("총 판매개수\t: " + cnt + "개");
+	}
+
 	public static void printSumOfIcecreamPrice(int sum) {
-		System.out.println("총 판매액 : " + sum + "원");
+		System.out.println("총 판매액\t: " + sum + "원");
+	}
+
+	public static void printCloseMarket() {
+		System.out.println();
+		System.out.println(">>> 마켓이 폐장되었습니다");
 	}
 }

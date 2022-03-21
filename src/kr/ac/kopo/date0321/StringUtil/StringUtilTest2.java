@@ -1,6 +1,6 @@
-package kr.ac.kopo.date0321;
+package kr.ac.kopo.date0321.StringUtil;
 
-public class TestStringUtil {
+public class StringUtilTest2 {
 	
 	public void removeCharMethodTest() {
 		System.out.println("removeChar(\"Hello World java\", \'o\') : " + StringUtil.removeChar("Hello World java", 'o'));

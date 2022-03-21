@@ -1,4 +1,4 @@
-package kr.ac.kopo.date0321;
+package kr.ac.kopo.date0321.StringUtil;
 
 public class StringUtil {
 	final static int UPPERLOWERGAP = 'a' - 'A';

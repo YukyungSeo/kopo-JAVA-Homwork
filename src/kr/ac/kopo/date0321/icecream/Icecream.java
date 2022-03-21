@@ -1,6 +1,6 @@
-package kr.ac.kopo.date0321;
+package kr.ac.kopo.date0321.icecream;
 
-public class Icecream {
+class Icecream {
 
 	private String name; // 아이스크림명
 	private int price; // 아이스크림가격
