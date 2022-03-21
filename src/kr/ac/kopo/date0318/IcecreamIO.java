@@ -2,11 +2,11 @@ package kr.ac.kopo.date0318;
 
 import java.util.Scanner;
 
-public class IcecreamIO {
+class IcecreamIO {
 
 	Scanner sc = new Scanner(System.in);
 
-	int getIcecreamCount() {
+	public int getIcecreamCount() {
 		System.out.print("아이스크림 몇개 구입할꺼야? => ");
 		return Integer.parseInt(sc.nextLine());
 	}
