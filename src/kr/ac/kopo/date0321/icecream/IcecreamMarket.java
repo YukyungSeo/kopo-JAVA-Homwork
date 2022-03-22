@@ -5,6 +5,8 @@ import java.util.ArrayList;
 public class IcecreamMarket {
 
 	private ArrayList<Icecream[]> purchaseList;
+	// private int totalCountIce;
+	// private int totalPriceIce;
 
 	public IcecreamMarket() {
 		this.purchaseList = new ArrayList<Icecream[]>();

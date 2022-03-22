@@ -12,7 +12,7 @@ class Square extends Shape {
 
 	@Override
 	public void valueOfArea() {
-		super.valueOfArea();
+		super.getArea();
 	}
 	
 	@Override

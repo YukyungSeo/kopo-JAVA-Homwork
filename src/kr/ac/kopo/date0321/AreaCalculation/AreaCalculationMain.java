@@ -11,27 +11,27 @@ public class AreaCalculationMain {
 		switch (shapeNum) {
 		case 1: {
 			Square sqr = new Square(x);
-			sqr.valueOfArea();
+			sqr.getArea();
 			sqr.printArea();
 			break;
 		}
 		case 2: {
 			double y = (int) (Math.random() * 10);
 			Rectangular rec = new Rectangular(x, y);
-			rec.valueOfArea();
+			rec.getArea();
 			rec.printArea();
 			break;
 		}
 		case 3: {
 			double y = (int) (Math.random() * 10);
 			Triangle tri = new Triangle(x, y);
-			tri.valueOfArea();
+			tri.getArea();
 			tri.printArea();
 			break;
 		}
 		case 4: {
 			Circle cir = new Circle(x);
-			cir.valueOfArea();
+			cir.getArea();
 			cir.printArea();
 			break;
 		}
