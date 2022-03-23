@@ -2,7 +2,7 @@ package kr.ac.kopo.date0321.AreaCalculation;
 
 class Triangle extends Shape {
 
-	double y;
+	private double y;
 
 	public Triangle() {
 		super();
