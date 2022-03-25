@@ -56,6 +56,9 @@ public class LottoUtil {
 		// 중복된 값이 있을 경우 error
 		Set<Integer> set = new HashSet<>();
 		for (int i : arr) {
+			// 뽑힌 숫자가 1~45가 아니면 error
+			if(i < 1 || i > 45)
+				System.out.println("error");
 			set.add(i);
 		}
 		if (set.size() < 6)
