@@ -7,17 +7,17 @@ public class CalendarPrinter {
 	private CalendarIO view = new CalendarIO();
 
 	public void start() {
-		int menu = this.view.inputMenu();
 
-		while (menu != 3) {
+		while (true) {
+			int menu = this.view.inputMenu();
 
 			if (menu == 1) {
 				this.makeYearCalendar(this.view.inputYear());
 			} else if (menu == 2) {
 				this.makeMonthCalendar(this.view.inputYear(), view.inputMonth());
-			}
-			
-			menu = this.view.inputMenu();
+			} else if (menu == 3)
+				break;
+
 		}
 	}
 

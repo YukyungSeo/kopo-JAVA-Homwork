@@ -29,8 +29,8 @@ public class CalendarIO {
 
 	public void printMonth(Calendar calender) {
 
-		int lastDate = calender.getActualMaximum(Calendar.DATE);
 		int day1st = calender.get(Calendar.DAY_OF_WEEK);
+		int lastDate = calender.getActualMaximum(Calendar.DAY_OF_MONTH);
 //		System.out.printf("day1st : %d, lastDate : %d\n", day1st, lastDate);
 
 		int cntDay = 1;
