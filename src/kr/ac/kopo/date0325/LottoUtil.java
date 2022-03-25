@@ -3,6 +3,8 @@ package kr.ac.kopo.date0325;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 import java.util.Set;
@@ -39,9 +41,25 @@ public class LottoUtil {
 		// 게임수 입력
 		int cnt = getInt("게임 수를 입력하세요 : ");
 		for (int i = 0; i < cnt; i++) {
-			System.out.println("게임 " + i + " : " + Arrays.toString(getNumbers()));
+			int[] lottoNums = getNumbers();
+			System.out.println("게임 " + i + " : " + Arrays.toString(lottoNums));
+			this.checkError(lottoNums);
 		}
 
+	}
+	
+	private void checkError(int[] arr) {
+		// 6개가 아닐 경우 error
+		if (arr.length != 6)
+			System.out.println("error");
+		
+		// 중복된 값이 있을 경우 error
+		Set<Integer> set = new HashSet<>();
+		for (int i : arr) {
+			set.add(i);
+		}
+		if (set.size() < 6)
+			System.out.println("error");
 	}
 
 	private int[] getNumbers() {
@@ -52,7 +70,7 @@ public class LottoUtil {
 
 		switch (solution) {
 		case 1: {
-			// 1. Set 사용
+			// 1. HashSet 사용
 			Set<Integer> set = new HashSet<>();
 			Random random = new Random();
 			while (set.size() < 6) {
@@ -63,18 +81,18 @@ public class LottoUtil {
 		}
 		case 2: {
 			// 2. ArrayList 사용
-			ArrayList<Integer> arrayList = new ArrayList<>();
+			List<Integer> arr = new ArrayList<>();
 			Random random = new Random();
-			while (arrayList.size() < 6) {
+			while (arr.size() < 6) {
 				int num = random.nextInt(45) + 1;
-				if (!arrayList.contains(num))
-					arrayList.add(num);
+				if (!arr.contains(num))
+					arr.add(num);
 			}
 
-			return Arrays.stream(arrayList.toArray()).mapToInt(o -> (int) o).toArray();
+			return Arrays.stream(arr.toArray()).mapToInt(o -> (int) o).toArray();
 		}
 		case 3: {
-			// 3. for/if문 사용
+			// 3. int[] + for/if문 사용
 			int[] arr = new int[6];
 			for (int i = 0; i < arr.length; i++) {
 				int num = ((int) (Math.random() * 100)) % 45 + 1;
@@ -93,24 +111,24 @@ public class LottoUtil {
 			return arr;
 		}
 		case 4: {
-			// 4. Exception 사용
-			ArrayList<Integer> arrayList = new ArrayList<>();
+			// 4. LinkedList + Exception 사용
+			List<Integer> arr = new LinkedList<>();
 			Random random = new Random();
-			for (int i = 0; i < 6; i++) {
+			while (arr.size() < 6) {
 				int num = random.nextInt(45) + 1;
 				try {
-					if (arrayList.contains(num))
+					if (arr.contains(num))
 						throw new InsertSameNumberException();
+					arr.add(num);
 				} catch (InsertSameNumberException e) {
-					i--;
+
 				}
-				arrayList.add(num);
 			}
 
-			return Arrays.stream(arrayList.toArray()).mapToInt(o -> (int) o).toArray();
+			return Arrays.stream(arr.toArray()).mapToInt(o -> (int) o).toArray();
 		}
 		case 5: {
-			// 5. Set + hashcode로 랜덤값 생성
+			// 5. TreeSet + hashcode로 랜덤값 생성
 			Set<Integer> set = new TreeSet<>();
 			int hash = System.identityHashCode(set);
 			while (set.size() < 6) {
