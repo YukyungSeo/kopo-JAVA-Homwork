@@ -80,7 +80,14 @@ public class LottoUtil {
 				int num = random.nextInt(45) + 1;
 				set.add(num);
 			}
-			return Arrays.stream(set.toArray()).mapToInt(o -> (int) o).toArray();
+			
+			int[] nums = new int[6];
+			int i = 0;
+			for (int num : set) {
+				nums[i++] = num;
+			}
+			return nums;
+//			return Arrays.stream(set.toArray()).mapToInt(o -> (int) o).toArray();
 		}
 		case 2: {
 			// 2. ArrayList 사용
@@ -92,7 +99,13 @@ public class LottoUtil {
 					arr.add(num);
 			}
 
-			return Arrays.stream(arr.toArray()).mapToInt(o -> (int) o).toArray();
+			int[] nums = new int[6];
+			int i = 0;
+			for (int num : arr) {
+				nums[i++] = num;
+			}
+			return nums;
+//			return Arrays.stream(arr.toArray()).mapToInt(o -> (int) o).toArray();
 		}
 		case 3: {
 			// 3. int[] + for/if문 사용
